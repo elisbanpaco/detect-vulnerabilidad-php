@@ -10,7 +10,7 @@ PHP → AST (tree-sitter) → grafo (nodo = tipo AST + función sensible + bande
 
 ## Uso
 
-Para la siguiente iteración con supervisión por línea y entrenamiento manual,
+Para el modelo v2 ya entrenado, con supervisión por línea y sus resultados,
 consulta [`../dataset/JOINT_TRAINING.md`](../dataset/JOINT_TRAINING.md).
 Los comandos de esta sección corresponden al baseline anterior.
 
@@ -113,18 +113,26 @@ automáticamente los mismos archivos ni estas métricas.
 - Localización (proxy, sin anotación humana): en 53 % de 200 webshells de test, alguna de las 3 líneas
   top contiene una función sensible o superglobal (top-1: 46.5 %). Es la parte más débil del MVP.
 
-## Limitaciones conocidas
+## Limitaciones del modelo original
 - Los benignos son frameworks/CMS (WordPress, Laravel, Composer, phpMyAdmin): separar eso de webshells es más fácil
   que detectar backdoors incrustados en código legítimo. Falta un benchmark con inyecciones dentro de archivos reales.
 - Solo aristas AST (sin flujo de control ni de datos); la localización no está validada con etiquetas por línea.
 - Dataset construido con colecciones públicas sin revisión manual: puede haber ruido de etiquetas.
 
-## Siguientes pasos
+## Evolución posterior
 La evaluación diagnóstica real/controlada y las comparaciones están documentadas
 en [`../dataset/LOCALIZATION.md`](../dataset/LOCALIZATION.md). Los resultados
 de clasificación del baseline anterior no validan por sí solos la localización.
 
-1. Agregar CFG/DFG (grafo de propiedades de código) y aristas hermano-siguiente.
-2. Dataset de inyección: insertar payloads en archivos benignos y usar la línea inyectada como etiqueta de localización.
-3. Comparar contra baselines (reglas YARA, PHP Malware Finder, CodeBERT) y probar robustez ante ofuscación.
-4. Explicador GNN formal (GNNExplainer / PGExplainer) y métricas de localización (top-k de líneas, IoU).
+El benchmark de inserciones, los controles y las comparaciones con reglas y
+regresión logística ya están implementados. El modelo conjunto v2 añade AST
+completos, enlaces léxicos definición/uso y supervisión por línea. Su F1 global es
+0,8858; detectó 270/270 inserciones y 48/90 muestras maliciosas recolectadas.
+Las cohortes y objetivos difieren del baseline anterior: no son una comparación
+directa entre arquitecturas.
+
+La siguiente corrección de representación distingue identidades de fuentes y
+formas de llamada. Tiene pruebas, pero todavía no tiene un modelo entrenado.
+Consulta la [auditoría de representación](../dataset/REPRESENTATION_AUDIT.md).
+Antes de otra evaluación deben fijarse las versiones PHP objetivo y reservar
+datos nuevos con familias de payload separadas entre particiones.

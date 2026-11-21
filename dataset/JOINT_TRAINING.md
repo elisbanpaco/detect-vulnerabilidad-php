@@ -1,8 +1,10 @@
-# Entrenamiento conjunto v2: ejecución manual
+# Entrenamiento conjunto v2: protocolo y resultados
 
 Esta versión experimental aprende detección de archivo y localización por línea.
-El baseline y su diagnóstico se conservan sin modificar. El rendimiento nuevo
-solo se conocerá al terminar el entrenamiento y su evaluación.
+El baseline y su diagnóstico se conservan sin modificar. La ejecución de 25
+épocas terminó el 20 de noviembre de 2026; sus resultados están al final de este
+documento. Los comandos siguientes permiten reproducir el procedimiento en
+destinos nuevos; no es necesario repetir ahora el entrenamiento completado.
 
 ## Lo que debes ejecutar
 
@@ -123,7 +125,7 @@ No se debe presentar el rendimiento de una sola semilla como robustez general.
 
 ## Archivos de salida
 
-`artifacts/joint/` contendrá `best.pt`, `metrics.json`, `history.json`,
+`artifacts/joint/` contiene `best.pt`, `metrics.json`, `history.json`,
 `test_predictions.json`, `parameters.json`, `environment.json` y `training.log`.
 Los hashes del código y del dataset se guardan para detectar cambios entre
 preparación y entrenamiento. El programa rechaza una salida existente.
@@ -159,9 +161,55 @@ Incluyen cobertura del final de archivos largos, aislamiento de ámbitos,
 reasignaciones, gradientes de la cabeza por línea, recarga del checkpoint y un
 entrenamiento pequeño de dos épocas exclusivamente con datos sintéticos.
 
-Las 13 pruebas pasaron. También se verificó un paso de gradientes en el caso
+Las 13 pruebas originales pasaron; la suite actual tiene 16 al incluir las tres
+pruebas del extractor experimental. También se verificó un paso de gradientes en el caso
 de entrenamiento de mayor tamaño y cantidad de aristas: 53796 nodos, 110296
 aristas, unos 2,53 segundos y pico observado de 1306 MiB en ese proceso. Esta
 medición aislada no estima la duración completa. No se guardó un modelo ni se
 evaluó el test real durante la comprobación; el registro está en
 `artifacts/joint_preflight/checks.json`.
+
+## Resultado de la ejecución completada
+
+Se seleccionó la época 25 con puntuación de validación 1,0. El entrenamiento
+completo, validación y evaluación final duraron 2844,99 segundos (47,4 minutos).
+El test se evaluó una vez durante esta ejecución.
+
+| Métrica global, 660 archivos | Valor |
+|---|---:|
+| Exactitud | 0,875758 |
+| Precisión | 0,888268 |
+| Recall | 0,883333 |
+| F1 | 0,885794 |
+| AUC ROC | 0,926694 |
+
+Matriz de confusión con filas reales y columnas predichas en orden
+`[legítimo, malicioso]`: `[[260, 40], [42, 318]]`.
+
+| Cohorte | Clasificaciones correctas | Interpretación |
+|---|---:|---|
+| Inserciones maliciosas | 270/270 | Recall controlado 100 % |
+| Controles constantes | 234/270 | 36 falsas alarmas |
+| Originales legítimos | 26/30 | 4 falsas alarmas |
+| Maliciosos recolectados | 48/90 | Recall por procedencia 53,33 % |
+
+La localización se mide únicamente en las 270 inserciones con etiquetas:
+Hit@1 = 267/270; Hit@3 = Hit@5 = Recall@5 = 1,0; IoU@5 = 0,4.
+Cada inserción tiene dos líneas objetivo; recuperar ambas entre cinco líneas
+produce IoU 2/5. No hay una medición de localización en las 90 muestras recolectadas.
+
+Se recalcularon las métricas globales, por cohorte y por línea desde
+`test_predictions.json`, sin volver a hacer inferencia. Se comprobaron también
+los hashes del código congelado, del manifiesto y del checkpoint:
+
+```text
+manifest_sha256: 2d923198f256f178b4d80bdd7a1f4054f279a93219ed63dc5983a9658a794e51
+checkpoint_sha256: de1d46b063ed8e7a53b9cc71788e81e40f73dce5bf9831cbf750185eeef77407
+```
+
+La separación entre resultados controlados y recolectados impide interpretar
+el F1 global como evidencia suficiente de generalización. La validación perfecta
+no prueba por sí sola fuga de datos ni descarta atajos aprendidos. La
+[auditoría posterior](REPRESENTATION_AUDIT.md) documenta colisiones de
+representación y llamadas dinámicas sin señal específica. El test v2 ahora es
+diagnóstico; no debe reutilizarse como evaluación ciega del siguiente modelo.
