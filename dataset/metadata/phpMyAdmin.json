@@ -1,0 +1,100 @@
+{
+  "sha": "11e127f3fa64adb099d765c4cae6de026954068c",
+  "node_id": "C_kwDOADEY1doAKDExZTEyN2YzZmE2NGFkYjA5OWQ3NjVjNGNhZTZkZTAyNjk1NDA2OGM",
+  "commit": {
+    "author": {
+      "name": "Isaac Bennetch",
+      "email": "bennetch@gmail.com",
+      "date": "2023-02-07T21:23:39Z"
+    },
+    "committer": {
+      "name": "Isaac Bennetch",
+      "email": "bennetch@gmail.com",
+      "date": "2023-02-07T21:23:39Z"
+    },
+    "message": "Adding composer lock for 5.2.1\n\nSigned-off-by: Isaac Bennetch <bennetch@gmail.com>",
+    "tree": {
+      "sha": "1ed5f72ab12bceb9e9771a59e4eaec8772b53b30",
+      "url": "https://api.github.com/repos/phpmyadmin/phpmyadmin/git/trees/1ed5f72ab12bceb9e9771a59e4eaec8772b53b30"
+    },
+    "url": "https://api.github.com/repos/phpmyadmin/phpmyadmin/git/commits/11e127f3fa64adb099d765c4cae6de026954068c",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/phpmyadmin/phpmyadmin/commits/11e127f3fa64adb099d765c4cae6de026954068c",
+  "html_url": "https://github.com/phpmyadmin/phpmyadmin/commit/11e127f3fa64adb099d765c4cae6de026954068c",
+  "comments_url": "https://api.github.com/repos/phpmyadmin/phpmyadmin/commits/11e127f3fa64adb099d765c4cae6de026954068c/comments",
+  "author": {
+    "login": "ibennetch",
+    "id": 1443710,
+    "node_id": "MDQ6VXNlcjE0NDM3MTA=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1443710?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ibennetch",
+    "html_url": "https://github.com/ibennetch",
+    "followers_url": "https://api.github.com/users/ibennetch/followers",
+    "following_url": "https://api.github.com/users/ibennetch/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ibennetch/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ibennetch/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ibennetch/subscriptions",
+    "organizations_url": "https://api.github.com/users/ibennetch/orgs",
+    "repos_url": "https://api.github.com/users/ibennetch/repos",
+    "events_url": "https://api.github.com/users/ibennetch/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ibennetch/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "ibennetch",
+    "id": 1443710,
+    "node_id": "MDQ6VXNlcjE0NDM3MTA=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1443710?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ibennetch",
+    "html_url": "https://github.com/ibennetch",
+    "followers_url": "https://api.github.com/users/ibennetch/followers",
+    "following_url": "https://api.github.com/users/ibennetch/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ibennetch/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ibennetch/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ibennetch/subscriptions",
+    "organizations_url": "https://api.github.com/users/ibennetch/orgs",
+    "repos_url": "https://api.github.com/users/ibennetch/repos",
+    "events_url": "https://api.github.com/users/ibennetch/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ibennetch/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "372185c30205962d33bfcb6b0b3e7e3a1997377b",
+      "url": "https://api.github.com/repos/phpmyadmin/phpmyadmin/commits/372185c30205962d33bfcb6b0b3e7e3a1997377b",
+      "html_url": "https://github.com/phpmyadmin/phpmyadmin/commit/372185c30205962d33bfcb6b0b3e7e3a1997377b"
+    }
+  ],
+  "stats": {
+    "total": 7981,
+    "additions": 7981,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "745c6cd3caf06751a56a91a6a86227ae1676b53d",
+      "filename": "composer.lock",
+      "status": "added",
+      "additions": 7981,
+      "deletions": 0,
+      "changes": 7981,
+      "blob_url": "https://github.com/phpmyadmin/phpmyadmin/blob/11e127f3fa64adb099d765c4cae6de026954068c/composer.lock",
+      "raw_url": "https://github.com/phpmyadmin/phpmyadmin/raw/11e127f3fa64adb099d765c4cae6de026954068c/composer.lock",
+      "contents_url": "https://api.github.com/repos/phpmyadmin/phpmyadmin/contents/composer.lock?ref=11e127f3fa64adb099d765c4cae6de026954068c"
+    }
+  ]
+}

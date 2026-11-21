@@ -1,0 +1,126 @@
+{
+  "sources": [
+    {
+      "id": "php-webshells",
+      "role": "mvp",
+      "label": 1,
+      "url": "https://github.com/JohnTroony/php-webshells",
+      "ref": "master",
+      "commit": "226a15d0684e2f893caed0b94fbbf0037b89adea",
+      "license": "no declarada",
+      "archive": "raw/php-webshells.zip",
+      "download_url": "https://codeload.github.com/JohnTroony/php-webshells/zip/226a15d0684e2f893caed0b94fbbf0037b89adea",
+      "archive_sha256": "cc20398c3fdd4d51492ebbb822ab5568c2b87c26193a15e834d93f84adf41da3",
+      "archive_bytes": 2389352
+    },
+    {
+      "id": "PHP-backdoors",
+      "role": "mvp",
+      "label": 1,
+      "url": "https://github.com/bartblaze/PHP-backdoors",
+      "ref": "master",
+      "commit": "8ca75ed86a5594fb2efb4629cc417f220cda9c82",
+      "license": "CC0-1.0",
+      "archive": "raw/PHP-backdoors.zip",
+      "download_url": "https://codeload.github.com/bartblaze/PHP-backdoors/zip/8ca75ed86a5594fb2efb4629cc417f220cda9c82",
+      "archive_sha256": "874d8f56e8b1d084414372b91a930bd79680072b9456f280350f2650e8624bcb",
+      "archive_bytes": 10298517
+    },
+    {
+      "id": "tennc-webshell",
+      "role": "mvp",
+      "label": 1,
+      "url": "https://github.com/tennc/webshell",
+      "ref": "master",
+      "commit": "6b17eae4a0bc792f996a38ce32772e4db9c7c799",
+      "license": "MIT",
+      "archive": "raw/tennc-webshell.zip",
+      "download_url": "https://codeload.github.com/tennc/webshell/zip/6b17eae4a0bc792f996a38ce32772e4db9c7c799",
+      "archive_sha256": "b79947d30cdb7b51b28cc227090841010000552a3648aba9a6d606291cb99a62",
+      "archive_bytes": 112091496
+    },
+    {
+      "id": "wordpress",
+      "role": "mvp",
+      "label": 0,
+      "url": "https://github.com/WordPress/WordPress",
+      "ref": "6.6.2",
+      "commit": "00a39b7510b97b76c86768b0c0ba4ecb9797534b",
+      "license": "GPL-2.0-or-later",
+      "archive": "raw/wordpress.zip",
+      "download_url": "https://codeload.github.com/WordPress/WordPress/zip/00a39b7510b97b76c86768b0c0ba4ecb9797534b",
+      "archive_sha256": "913f14bd68995cc9ab26e4989a2de7ee7a02b04bdab4760a83c8965fb5deb8c3",
+      "archive_bytes": 46911064
+    },
+    {
+      "id": "laravel",
+      "role": "mvp",
+      "label": 0,
+      "url": "https://github.com/laravel/framework",
+      "ref": "v11.0.0",
+      "commit": "6089f679d6d29e6071a6448ed5e96de02e57fedb",
+      "license": "MIT",
+      "archive": "raw/laravel.zip",
+      "download_url": "https://codeload.github.com/laravel/framework/zip/6089f679d6d29e6071a6448ed5e96de02e57fedb",
+      "archive_sha256": "048f207a1309399e981974e193f2d0e21f79c4191ae0ec55a8ebccba275a27cb",
+      "archive_bytes": 1847964
+    },
+    {
+      "id": "composer",
+      "role": "mvp",
+      "label": 0,
+      "url": "https://github.com/composer/composer",
+      "ref": "2.7.9",
+      "commit": "e30ccdd665828ae66eb1be78f056e39e1d5f55ab",
+      "license": "MIT",
+      "archive": "raw/composer.zip",
+      "download_url": "https://codeload.github.com/composer/composer/zip/e30ccdd665828ae66eb1be78f056e39e1d5f55ab",
+      "archive_sha256": "d075dea227ea67df2342eea893e41dba37e1f0f2b627711cea7956916146efa8",
+      "archive_bytes": 720164
+    },
+    {
+      "id": "phpMyAdmin",
+      "role": "mvp",
+      "label": 0,
+      "url": "https://github.com/phpmyadmin/phpmyadmin",
+      "ref": "RELEASE_5_2_1",
+      "commit": "11e127f3fa64adb099d765c4cae6de026954068c",
+      "license": "GPL-2.0-or-later",
+      "archive": "raw/phpMyAdmin.zip",
+      "download_url": "https://codeload.github.com/phpmyadmin/phpmyadmin/zip/11e127f3fa64adb099d765c4cae6de026954068c",
+      "archive_sha256": "f30942fffc60a073942638b3d154fde21cd41bdc2dfedfc05c317ef8f3dcdecb",
+      "archive_bytes": 18744903
+    },
+    {
+      "id": "PHP-Webshell-Dataset",
+      "role": "reference",
+      "label": 1,
+      "url": "https://github.com/Cyc1e183/PHP-Webshell-Dataset",
+      "commit": "59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc",
+      "license": "no declarada",
+      "archive": "raw/PHP-Webshell-Dataset.zip",
+      "download_url": "https://media.githubusercontent.com/media/Cyc1e183/PHP-Webshell-Dataset/59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc/PHP-Webshell.zip",
+      "archive_sha256": "ea9211fcd642b21e912899e09b570d71431369e63ab11c28f3d6d90fd47074ad",
+      "archive_bytes": 108346877
+    },
+    {
+      "id": "mendeley-wt8m6bcwbr-v2",
+      "role": "reference",
+      "label": null,
+      "url": "https://data.mendeley.com/datasets/wt8m6bcwbr/2",
+      "doi": "10.17632/wt8m6bcwbr.2",
+      "authors": [
+        "Abdelhakim Hannousse",
+        "Salima Yahiouche"
+      ],
+      "version": 2,
+      "license": "CC-BY-4.0",
+      "archive": "raw/mendeley-wt8m6bcwbr-v2.zip",
+      "download_url": "https://data.mendeley.com/public-files/datasets/wt8m6bcwbr/files/859f17be-8b31-4b0e-ae98-5c03c3c072e4/file_downloaded",
+      "archive_sha256": "32f4c93d57311ceecac3322655d357ee8fdb20ecf48bb240c0b6d74205ad85a4",
+      "archive_bytes": 108895667
+    }
+  ],
+  "created_utc": "2026-11-20",
+  "scope": "Recolecci\u00f3n nueva; no reconstruye los 1231/760 archivos del experimento hist\u00f3rico."
+}

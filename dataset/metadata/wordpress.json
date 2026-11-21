@@ -1,0 +1,90 @@
+{
+  "sha": "00a39b7510b97b76c86768b0c0ba4ecb9797534b",
+  "node_id": "C_kwDOACwWcNoAKDAwYTM5Yjc1MTBiOTdiNzZjODY3NjhiMGMwYmE0ZWNiOTc5NzUzNGI",
+  "commit": {
+    "author": {
+      "name": "audrasjb",
+      "email": "audrasjb@git.wordpress.org",
+      "date": "2024-09-10T15:22:16Z"
+    },
+    "committer": {
+      "name": "audrasjb",
+      "email": "audrasjb@git.wordpress.org",
+      "date": "2024-09-10T15:22:16Z"
+    },
+    "message": "Tag 6.6.2\nBuilt from https://develop.svn.wordpress.org/tags/6.6.2@59006\n\n\ngit-svn-id: http://core.svn.wordpress.org/tags/6.6.2@58402 1a063a9b-81f0-0310-95a4-ce76da25c4cd",
+    "tree": {
+      "sha": "d7dab6ee123805b8730c9bbd7f9a83a17e8be67a",
+      "url": "https://api.github.com/repos/WordPress/WordPress/git/trees/d7dab6ee123805b8730c9bbd7f9a83a17e8be67a"
+    },
+    "url": "https://api.github.com/repos/WordPress/WordPress/git/commits/00a39b7510b97b76c86768b0c0ba4ecb9797534b",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/WordPress/WordPress/commits/00a39b7510b97b76c86768b0c0ba4ecb9797534b",
+  "html_url": "https://github.com/WordPress/WordPress/commit/00a39b7510b97b76c86768b0c0ba4ecb9797534b",
+  "comments_url": "https://api.github.com/repos/WordPress/WordPress/commits/00a39b7510b97b76c86768b0c0ba4ecb9797534b/comments",
+  "author": {
+    "login": "audrasjb",
+    "id": 1590998,
+    "node_id": "MDQ6VXNlcjE1OTA5OTg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1590998?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/audrasjb",
+    "html_url": "https://github.com/audrasjb",
+    "followers_url": "https://api.github.com/users/audrasjb/followers",
+    "following_url": "https://api.github.com/users/audrasjb/following{/other_user}",
+    "gists_url": "https://api.github.com/users/audrasjb/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/audrasjb/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/audrasjb/subscriptions",
+    "organizations_url": "https://api.github.com/users/audrasjb/orgs",
+    "repos_url": "https://api.github.com/users/audrasjb/repos",
+    "events_url": "https://api.github.com/users/audrasjb/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/audrasjb/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "audrasjb",
+    "id": 1590998,
+    "node_id": "MDQ6VXNlcjE1OTA5OTg=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1590998?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/audrasjb",
+    "html_url": "https://github.com/audrasjb",
+    "followers_url": "https://api.github.com/users/audrasjb/followers",
+    "following_url": "https://api.github.com/users/audrasjb/following{/other_user}",
+    "gists_url": "https://api.github.com/users/audrasjb/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/audrasjb/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/audrasjb/subscriptions",
+    "organizations_url": "https://api.github.com/users/audrasjb/orgs",
+    "repos_url": "https://api.github.com/users/audrasjb/repos",
+    "events_url": "https://api.github.com/users/audrasjb/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/audrasjb/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "904be9b35862702ebc0f7f026cd7df3de2e984dd",
+      "url": "https://api.github.com/repos/WordPress/WordPress/commits/904be9b35862702ebc0f7f026cd7df3de2e984dd",
+      "html_url": "https://github.com/WordPress/WordPress/commit/904be9b35862702ebc0f7f026cd7df3de2e984dd"
+    }
+  ],
+  "stats": {
+    "total": 0,
+    "additions": 0,
+    "deletions": 0
+  },
+  "files": [
+
+  ]
+}

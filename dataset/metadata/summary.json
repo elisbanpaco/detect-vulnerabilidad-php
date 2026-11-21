@@ -1,0 +1,27 @@
+{
+  "files": 4276,
+  "by_source": {
+    "PHP-backdoors": 157,
+    "composer": 278,
+    "laravel": 1286,
+    "php-webshells": 104,
+    "phpMyAdmin": 635,
+    "tennc-webshell": 341,
+    "wordpress": 1475
+  },
+  "by_label": {
+    "1": 602,
+    "0": 3674
+  },
+  "filtering": {
+    "included": 4276,
+    "no_php_open_tag": 45,
+    "size_limit": 60,
+    "duplicate": 24,
+    "benign_test_or_fixture": 312
+  },
+  "graph_preparation": {
+    "partitions_defined_in": "src/prepare_data.py",
+    "per_repository_cap": null
+  }
+}

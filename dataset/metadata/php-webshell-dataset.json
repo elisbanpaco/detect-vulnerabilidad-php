@@ -1,0 +1,101 @@
+{
+  "sha": "59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc",
+  "node_id": "MDY6Q29tbWl0MzEyMjUyMDM5OjU5ZmYxNGZmYjA1ZWQ0YWEyZmQ1NTBkYjBiZDY2ZDBjZjEwNWYwZGM=",
+  "commit": {
+    "author": {
+      "name": "Cyc1e",
+      "email": "61731702+Cyc1e183@users.noreply.github.com",
+      "date": "2020-11-17T00:04:31Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2020-11-17T00:04:31Z"
+    },
+    "message": "Update README.md",
+    "tree": {
+      "sha": "cedac97af85c8561ae73170d87d50cffbd4de612",
+      "url": "https://api.github.com/repos/Cyc1e183/PHP-Webshell-Dataset/git/trees/cedac97af85c8561ae73170d87d50cffbd4de612"
+    },
+    "url": "https://api.github.com/repos/Cyc1e183/PHP-Webshell-Dataset/git/commits/59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJfsxOPCRBK7hj4Ov3rIwAAdHIIADLw8SxSWph42hmYxcQCcDdW\nUtq7WpURSMSyl2UzxvwgU+mrNb38mL5KWOw7cnw3ndqJ01FzxLP1elPM1e1vjSqa\nS/g8SSpUQbQDS7UAJBHHIg6yxJGELSpMtmU1qMIveE6W115aEiCvtvZyOotjzqwA\n3J01w00dZ/no9KygmYofBsvHwlzl71P5mdTj53uPiuFsbEV/PIcqheDGX+cF7ItG\nGtI/DGlPXZpY6lVq63pa5oI9ebXh5ce2rPvMBvi3qmksK87gjGDMwKNzaWdPbim/\nxJ7IG3Qrphu4CKOx5bByPRV4wcBNLTyA94RN/thsC1QVLLpEJmD0lcAhckO4QNM=\n=LVcJ\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree cedac97af85c8561ae73170d87d50cffbd4de612\nparent 09382c7a771fba3cdccef1045e4c657ba7fc1a47\nauthor Cyc1e <61731702+Cyc1e183@users.noreply.github.com> 1605571471 +0800\ncommitter GitHub <noreply@github.com> 1605571471 +0800\n\nUpdate README.md",
+      "verified_at": "2024-01-16T19:59:59Z"
+    }
+  },
+  "url": "https://api.github.com/repos/Cyc1e183/PHP-Webshell-Dataset/commits/59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc",
+  "html_url": "https://github.com/Cyc1e183/PHP-Webshell-Dataset/commit/59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc",
+  "comments_url": "https://api.github.com/repos/Cyc1e183/PHP-Webshell-Dataset/commits/59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc/comments",
+  "author": {
+    "login": "Cyc1e183",
+    "id": 61731702,
+    "node_id": "MDQ6VXNlcjYxNzMxNzAy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/61731702?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Cyc1e183",
+    "html_url": "https://github.com/Cyc1e183",
+    "followers_url": "https://api.github.com/users/Cyc1e183/followers",
+    "following_url": "https://api.github.com/users/Cyc1e183/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Cyc1e183/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Cyc1e183/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Cyc1e183/subscriptions",
+    "organizations_url": "https://api.github.com/users/Cyc1e183/orgs",
+    "repos_url": "https://api.github.com/users/Cyc1e183/repos",
+    "events_url": "https://api.github.com/users/Cyc1e183/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Cyc1e183/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "09382c7a771fba3cdccef1045e4c657ba7fc1a47",
+      "url": "https://api.github.com/repos/Cyc1e183/PHP-Webshell-Dataset/commits/09382c7a771fba3cdccef1045e4c657ba7fc1a47",
+      "html_url": "https://github.com/Cyc1e183/PHP-Webshell-Dataset/commit/09382c7a771fba3cdccef1045e4c657ba7fc1a47"
+    }
+  ],
+  "stats": {
+    "total": 4,
+    "additions": 2,
+    "deletions": 2
+  },
+  "files": [
+    {
+      "sha": "9c4269e9ffa6ee1852f153ec2e6d326dc6bb8770",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 2,
+      "changes": 4,
+      "blob_url": "https://github.com/Cyc1e183/PHP-Webshell-Dataset/blob/59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc/README.md",
+      "raw_url": "https://github.com/Cyc1e183/PHP-Webshell-Dataset/raw/59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc/README.md",
+      "contents_url": "https://api.github.com/repos/Cyc1e183/PHP-Webshell-Dataset/contents/README.md?ref=59ff14ffb05ed4aa2fd550db0bd66d0cf105f0dc",
+      "patch": "@@ -1,5 +1,5 @@\n # PHP-Webshell-Dataset\n-We construct a cleaned data set to facilitate subsequent related research via collecting 17 existing Webshell data sets on Github.\n+We construct a cleaned dataset of webshell consisting of **2,917** samples from 17 webshell collection projects\n \n |  #   |                       Github projects                        |\n | :--: | :----------------------------------------------------------: |\n@@ -21,5 +21,5 @@ We construct a cleaned data set to facilitate subsequent related research via co\n |  15  | [backdoorhub/shell-backdoor-list](https://github.com/backdoorhub/shell-backdoor-list) |\n |  16  | [amitnaik/PHP-backdoor](https://github.com/amitnaik/PHP-backdoor) |\n \n-Since webshell samples collected by each github project inevitably include partial duplicate sample files, in order to avoid repeated webshell sample files affecting the experimental results, we used md5 algorithm to reprocess 6021 webshell samples and obtained total of 3211 non-repeated webshell sample files. Meanwhile, in oder to ensure the accuracy of the data ,294 non-PHP webshell files were excluded by manual analysis, so the final number of webshell samples was 2917.\n+Since webshell samples collected by each github project inevitably include partial duplicate sample files, in order to avoid repeated webshell sample files affecting the experimental results, we used md5 algorithm to reprocess 6021 webshell samples and obtained total of 3211 non-repeated webshell sample files. Meanwhile, in oder to ensure the accuracy of the data ,294 non-PHP webshell files were excluded by manual analysis, so the final number of webshell samples was **2,917**.\n **This data set is used to support related research on webshell detection.**"
+    }
+  ]
+}

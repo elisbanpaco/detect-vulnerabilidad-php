@@ -1,0 +1,81 @@
+{
+  "sha": "8ca75ed86a5594fb2efb4629cc417f220cda9c82",
+  "node_id": "C_kwDOA3hBkdoAKDhjYTc1ZWQ4NmE1NTk0ZmIyZWZiNDYyOWNjNDE3ZjIyMGNkYTljODI",
+  "commit": {
+    "author": {
+      "name": "Bart P",
+      "email": "bartblaze@gmail.com",
+      "date": "2024-03-09T18:03:18Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2024-03-09T18:03:18Z"
+    },
+    "message": "Update PHP tools.md\n\nRemove stale / dead links\r\nUpdate new",
+    "tree": {
+      "sha": "c610c91042a7c4d36a3611515ebf417575123d0c",
+      "url": "https://api.github.com/repos/bartblaze/PHP-backdoors/git/trees/c610c91042a7c4d36a3611515ebf417575123d0c"
+    },
+    "url": "https://api.github.com/repos/bartblaze/PHP-backdoors/git/commits/8ca75ed86a5594fb2efb4629cc417f220cda9c82",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJl7KRmCRC1aQ7uu5UhlAAAjFcQAGXraVmeyAj6g8rlKt2rd4MT\nOS9ewjP+Gn2kfC51fwNneGoU6+f9dHWP8tOzqHmCUVVrZB6s/o0zQoiUjgJxcrsK\n8r3j2q27CD7DQU/W/dDyzgB97xh09A8p9wRbnm48YH+C7NNzbj8ssLz70Mv5CR2s\nEcmutXXFftywEgF7GmyHgZ13EOhZOujt/UIp7qxIrSDn0KJaWS6IFUa3xN5GOeFO\nLsyuTWC8crwHRyDG9MKd0DoO9pdVPMbGFJYRFI4R8IEkYEAsG0UcBcIZ1uUf0tTw\nr5nCTL0NQm8Wq75cG0MjClvEB/pIzXMXTiB4Ms3vBwkVrR6lvHK9ZgqUf5tqqqP9\n7w6gKcAWvRRwxVuImBqs8XQ2zyGFXGHlJMtJ/KaoJ3LXfvEbUv5vT31wo2rBfLOt\n9xIAcooZUkhEh554dgKdT1rD8s02lFeoa7yTu5krPYFBXKJwzSMnaEhE4TX+AdTU\ndMoKfp3MWaNjgAYGnT5L1BgskER0Ma+wO6qpymaIhYYJkzeWSFiLs61hUHpKs+Ax\nLaQD7modSW5k4Hqnz7TaNZrMprdfbdmP+Wf2qJDEIHXTMUbDKln96b7PKNzuFiO2\nMkWQbYUHkVmuNyauIqsjvyITKam/j4S16Fhn01cz4GQrGxjQ5lrM6kcV87QcgZAx\nIQU7GUOEO3fLA6cPdf/v\n=uUZo\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree c610c91042a7c4d36a3611515ebf417575123d0c\nparent b15017f9c563c89e97f2b491a487a4f7be1a10a4\nauthor Bart P <bartblaze@gmail.com> 1710007398 +0100\ncommitter GitHub <noreply@github.com> 1710007398 +0100\n\nUpdate PHP tools.md\n\nRemove stale / dead links\r\nUpdate new",
+      "verified_at": "2024-11-12T17:16:09Z"
+    }
+  },
+  "url": "https://api.github.com/repos/bartblaze/PHP-backdoors/commits/8ca75ed86a5594fb2efb4629cc417f220cda9c82",
+  "html_url": "https://github.com/bartblaze/PHP-backdoors/commit/8ca75ed86a5594fb2efb4629cc417f220cda9c82",
+  "comments_url": "https://api.github.com/repos/bartblaze/PHP-backdoors/commits/8ca75ed86a5594fb2efb4629cc417f220cda9c82/comments",
+  "author": null,
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "b15017f9c563c89e97f2b491a487a4f7be1a10a4",
+      "url": "https://api.github.com/repos/bartblaze/PHP-backdoors/commits/b15017f9c563c89e97f2b491a487a4f7be1a10a4",
+      "html_url": "https://github.com/bartblaze/PHP-backdoors/commit/b15017f9c563c89e97f2b491a487a4f7be1a10a4"
+    }
+  ],
+  "stats": {
+    "total": 13,
+    "additions": 4,
+    "deletions": 9
+  },
+  "files": [
+    {
+      "sha": "c39ab80203174cb94568fa31b6e74f20cf7dee48",
+      "filename": "PHP tools.md",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 9,
+      "changes": 13,
+      "blob_url": "https://github.com/bartblaze/PHP-backdoors/blob/8ca75ed86a5594fb2efb4629cc417f220cda9c82/PHP%20tools.md",
+      "raw_url": "https://github.com/bartblaze/PHP-backdoors/raw/8ca75ed86a5594fb2efb4629cc417f220cda9c82/PHP%20tools.md",
+      "contents_url": "https://api.github.com/repos/bartblaze/PHP-backdoors/contents/PHP%20tools.md?ref=8ca75ed86a5594fb2efb4629cc417f220cda9c82",
+      "patch": "@@ -4,8 +4,7 @@\n \n ###### *Online*:\n * FOPO PHP Deobfuscator [ver. 0.1](https://glot.io/snippets/ee5mzg3zf1) | [ver. 0.2](https://glot.io/snippets/efruafhnez)\n-* [Sucuri's PHP decoder](http://ddecode.com/phpdecoder/)\n-* [Toolki's PHP decoder](http://toolki.com/en/php-decoder/)\n+* [Quttera's PHP decoder](https://malwaredecoder.quttera.com/)\n * [unPHP](https://www.unphp.net/)\n \n ###### *Offline*:\n@@ -16,18 +15,14 @@\n \n \n ##### **PHP beautifiers**:\n-* [Dan's PHP beautify](http://www.cleancss.com/php-beautify/)\n-* [PHP beautifier](http://phpbeautifier.com/)\n-* [PHP formatter](http://beta.phpformatter.com/)\n+* [Dan's PHP beautify](https://www.cleancss.com/php-beautify/)\n+* [CyberChef Generic Beautify](https://gchq.github.io/CyberChef/#recipe=Generic_Code_Beautify())\n \n \n ##### **PHP testers**:\n \n ###### *Online*:\n-* [PHP Editor](http://www.runphponline.com/)\n-* [PHPFiddle](http://phpfiddle.org/)\n-* [PHP Sandbox](http://sandbox.onlinephpfunctions.com/)\n-* [PHP Tester](http://phptester.net/)\n+* [PHP Sandbox / PHP Online](https://onlinephp.io/)\n \n ###### *Offline*:\n * [EasyPHP](http://www.easyphp.org/)"
+    }
+  ]
+}
