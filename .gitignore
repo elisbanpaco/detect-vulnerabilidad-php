@@ -1,0 +1,19 @@
+/dataset/raw/
+/dataset/processed/
+__pycache__/
+/.venv/
+/artifacts/
+
+# Pesos y salidas de entrenamiento locales.
+*.pt
+*.pth
+*.joblib
+*.log
+
+# Cachés de herramientas y configuración privada local.
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+/.aws/
