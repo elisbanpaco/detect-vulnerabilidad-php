@@ -1,0 +1,13 @@
+{
+    "name": "elisbanpaco/phpguard",
+    "description": "Detector experimental de código malicioso PHP mediante análisis estático y GNN",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2"
+    },
+    "bin": ["bin/phpguard"],
+    "archive": {
+        "exclude": ["/dataset", "/artifacts", "/.venv", "/.agents", "/.codex", "/.aws", "/tests", "/src/test_*.py", "/src/__pycache__", "/src/*.pt", "/vendor", "/dist", "/.env", "/.env.*"]
+    }
+}

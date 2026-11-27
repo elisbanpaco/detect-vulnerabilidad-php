@@ -1,0 +1,68 @@
+{
+  "id": "joint-v2-2026-11-27",
+  "sha256": "de1d46b063ed8e7a53b9cc71788e81e40f73dce5bf9831cbf750185eeef77407",
+  "checkpoint_version": 2,
+  "graph_version": "full_ast_lexical_def_use_v1",
+  "training_run": "joint-2026-11-27",
+  "best_epoch": 25,
+  "threshold": 0.5,
+  "max_bytes": 200000,
+  "manifest_sha256": "2d923198f256f178b4d80bdd7a1f4054f279a93219ed63dc5983a9658a794e51",
+  "source_sha256": {
+    "prepare_joint.py": "b61c4b91e21193d576f02a2c86a7329c9f11f7266525f5addebaf29a1373bcf2",
+    "joint_graph.py": "70ab9fdf8970d3fbae0cf21ecbf6d47bb65fe159ebfacc86633bcfc38c24eceb",
+    "joint_model.py": "afcaa8bc9f75ce1ab2c37ff86510cfc21a97ea2f5fbe140e131e3e3b7e74eee3",
+    "train_joint.py": "04639db30bd8cd19ae66d8d56da6665929e0a413c02ae06acf0bb9033a286260",
+    "phpgraph.py": "bd3a7dc540af449602a652c9b6fd6a1f18e5be69d76ae1a4a48ae80d4856296a",
+    "build_localization.py": "36b8b13e05f37d6681f401e5d08d2e8b3c0457826d26a35273d393459b4664d9",
+    "evaluate_localization.py": "ec45b4c74b96bead92baec4815433378236d0a6dc25809577499c0cd55a93897",
+    "audit_corpus.py": "b6e938d97c610a8c980f7a212f1f658290909368954e76b7da6d141804743f80"
+  },
+  "metrics": {
+    "n": 660,
+    "accuracy": 0.8757575757575757,
+    "precision": 0.888268156424581,
+    "recall": 0.8833333333333333,
+    "f1": 0.8857938718662952,
+    "auc": 0.9266944444444445,
+    "confusion_matrix": [
+      [
+        260,
+        40
+      ],
+      [
+        42,
+        318
+      ]
+    ],
+    "localization_n": 270,
+    "e2e.hit@1": 0.9888888888888889,
+    "e2e.hit@3": 1.0,
+    "e2e.hit@5": 1.0,
+    "e2e.recall@5": 1.0,
+    "e2e.iou@5": 0.4,
+    "selection_score": 0.9428969359331476,
+    "kind.collected_malicious": {
+      "n": 90,
+      "correct": 48
+    },
+    "kind.constant_control": {
+      "n": 270,
+      "correct": 234
+    },
+    "kind.malicious": {
+      "n": 270,
+      "correct": 270
+    },
+    "kind.original": {
+      "n": 30,
+      "correct": 26
+    }
+  },
+  "caveats": [
+    "Controlled templates are shared across splits; this tests new bases, not unseen payload families.",
+    "Collected labels are inherited and have no line supervision or independent human validation.",
+    "Lexical def/use links do not implement branch-sensitive or interprocedural taint analysis.",
+    "This is a new controlled cohort, not an external blind deployment test."
+  ]
+}

@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+
+$root = dirname(__DIR__);
+$python = getenv('PHPGUARD_PYTHON') ?: (is_file($root . '/.venv/bin/python') ? $root . '/.venv/bin/python' : 'python3');
+
+try {
+    if (!function_exists('proc_open')) {
+        throw new RuntimeException('PHP debe permitir proc_open para iniciar el motor Python.');
+    }
+    $process = proc_open(
+        [$python, $root . '/src/scan.py', ...array_slice($argv, 1)],
+        [0 => STDIN, 1 => STDOUT, 2 => STDERR],
+        $pipes
+    );
+    if (!is_resource($process)) {
+        throw new RuntimeException('No se pudo iniciar Python; configura PHPGUARD_PYTHON.');
+    }
+    $deadline = microtime(true) + 120;
+    do {
+        $status = proc_get_status($process);
+        if (!$status['running']) {
+            break;
+        }
+        if (microtime(true) >= $deadline) {
+            proc_terminate($process);
+            usleep(200000);
+            if (proc_get_status($process)['running']) {
+                proc_terminate($process, 9);
+            }
+            proc_close($process);
+            throw new RuntimeException('El análisis superó el límite de 120 segundos.');
+        }
+        usleep(100000);
+    } while (true);
+    proc_close($process);
+    exit(in_array($status['exitcode'], [0, 1, 2], true) ? $status['exitcode'] : 2);
+} catch (Throwable $error) {
+    fwrite(STDERR, json_encode(['verdict' => 'NO_ANALIZABLE', 'error' => $error->getMessage()], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . PHP_EOL);
+    exit(2);
+}

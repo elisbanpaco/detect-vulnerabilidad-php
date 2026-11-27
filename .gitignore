@@ -6,6 +6,7 @@ __pycache__/
 
 # Pesos y salidas de entrenamiento locales.
 *.pt
+!/models/joint-v2.pt
 *.pth
 *.joblib
 *.log
@@ -17,3 +18,6 @@ __pycache__/
 .env.*
 !.env.example
 /.aws/
+/vendor/
+/dist/
+/composer.lock
