@@ -51,18 +51,43 @@ class ScanTests(unittest.TestCase):
     @unittest.skipUnless(shutil.which("php") and os.name == "posix", "requiere PHP CLI y POSIX")
     def test_php_passes_literal_arguments_and_exit_status(self):
         with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "package"
+            (root / "bin").mkdir(parents=True)
+            (root / "src").mkdir()
+            shutil.copy2(scan.ROOT / "bin/phpguard", root / "bin/phpguard")
+            shutil.copy2(scan.ROOT / "src/scan.py", root / "src/scan.py")
             interpreter = Path(tmp) / "fake python"
             interpreter.write_text(f"#!{sys.executable}\nimport json,sys\nprint(json.dumps(sys.argv[1:]))\nsys.exit(int(sys.argv[-1]))\n")
             interpreter.chmod(0o755)
             marker = Path(tmp) / "unexpected"
             argument = f"sample with spaces; touch {marker}; $(echo unsafe).php"
             for status in (0, 1, 2, 127):
-                result = subprocess.run(["php", str(scan.ROOT / "bin/phpguard"), argument, str(status)],
+                result = subprocess.run(["php", str(root / "bin/phpguard"), argument, str(status)],
                                         env=dict(os.environ, PHPGUARD_PYTHON=str(interpreter)),
                                         capture_output=True, text=True, timeout=10)
                 self.assertEqual(result.returncode, status if status in (0, 1, 2) else 2)
                 self.assertEqual(json.loads(result.stdout)[1], argument)
                 self.assertFalse(marker.exists())
+
+    @unittest.skipUnless(shutil.which("php") and os.name == "posix", "requiere PHP CLI y POSIX")
+    def test_php_uses_bundled_engine_without_python_configuration(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "bin").mkdir()
+            shutil.copy2(scan.ROOT / "bin/phpguard", root / "bin/phpguard")
+            environment = dict(os.environ, PHPGUARD_PYTHON="/not/installed/python")
+            missing = subprocess.run(["php", str(root / "bin/phpguard"), "sample.php"],
+                                     env=environment, capture_output=True, text=True, timeout=10)
+            self.assertEqual(missing.returncode, 2)
+            self.assertEqual(json.loads(missing.stderr)["verdict"], "NO_ANALIZABLE")
+            engine = root / "runtime/linux-x86_64/phpguard-engine"
+            engine.parent.mkdir(parents=True)
+            engine.write_text(f"#!{sys.executable}\nimport json,sys\nprint(json.dumps(sys.argv[1:]))\nsys.exit(1)\n")
+            engine.chmod(0o755)
+            result = subprocess.run(["php", str(root / "bin/phpguard"), "sample.php"],
+                                    env=environment, capture_output=True, text=True, timeout=10)
+            self.assertEqual(result.returncode, 1)
+            self.assertEqual(json.loads(result.stdout), ["sample.php"])
 
 
 if __name__ == "__main__":

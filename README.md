@@ -7,68 +7,59 @@ siguiente representación tiene pruebas, pero no hay un modelo v3 entrenado.
 
 ## Comando PHP y paquete Composer experimental
 
-Requiere PHP CLI >=8.2 con `proc_open`, Python 3.13 y las dependencias de
-`requirements.txt`. Composer distribuye el comando y los pesos; no instala Python
-ni PyTorch. El paquete incluye `models/joint-v2.pt`, procedente de la ejecución
-del 27 de noviembre de 2026, y verifica su SHA-256 antes de cargarlo. Esa ejecución
-reprodujo exactamente el checkpoint anterior; no es una mejora de precisión.
+La distribución autónoma v0.2.0 está en preparación. Incluye el intérprete Python,
+las bibliotecas CPU y el modelo; el usuario no instala Python, uv ni PyTorch,
+ni configura `PHPGUARD_PYTHON`. Requiere PHP CLI >=8.2 con `proc_open` y Linux
+x86-64 con glibc. El ZIP local se construyó en glibc 2.42; no se garantiza su uso
+en distribuciones anteriores. Windows, macOS, ARM y Alpine/musl no están soportados.
+El entorno de construcción se registra en `runtime/build.json` del ZIP.
 
-Desde este repositorio, después de instalar las dependencias Python:
-
-```bash
-printf '%s\n' '<?php' 'echo 123;' > /tmp/phpguard-ejemplo.php
-php bin/phpguard /tmp/phpguard-ejemplo.php
-echo "Código de salida: $?"
-```
-
-Este ejemplo inocuo puede producir una falsa alarma con el modelo actual. El
-resultado es JSON. Los códigos son `0` = `SIN_INDICIOS`, `1` = `SOSPECHOSO`,
-`2` = error o `NO_ANALIZABLE`. Los archivos mayores de 200000 bytes, sin apertura
-PHP o con errores de parseo no reciben clasificación. El puente PHP limita cada
-ejecución a 120 segundos. No se ejecuta el archivo inspeccionado ni se modifica.
-`SIN_INDICIOS` no certifica seguridad; las puntuaciones no están calibradas.
-
-Para instalar localmente desde otro proyecto PHP o Laravel, sin publicar todavía,
-añade a su `composer.json` (conservando las demás propiedades) el repositorio:
-
-```json
-"repositories": [
-    {
-        "type": "path",
-        "url": "/ruta/real/al/repositorio/app-detect-vulnerabilidad-php",
-        "options": {"symlink": true}
-    }
-]
-```
-
-Reemplaza esa ruta por la ubicación real de este repositorio. Desde ese proyecto:
+Después de publicar v0.2.0, desde un proyecto PHP o Laravel:
 
 ```bash
-composer require 'elisbanpaco/phpguard:@dev'
-```
-
-Configura una ruta absoluta al intérprete donde instalaste las dependencias y
-analiza un archivo existente del proyecto:
-
-```bash
-export PHPGUARD_PYTHON="/ruta/real/al/repositorio/app-detect-vulnerabilidad-php/.venv/bin/python"
+composer require elisbanpaco/phpguard:^0.2
 vendor/bin/phpguard archivo.php
 ```
 
-`PHPGUARD_PYTHON` debe contener solo el ejecutable, sin argumentos. Si se omite,
-el comando usa `.venv/bin/python` dentro del paquete cuando existe, o `python3`
-del PATH. Se pasan argumentos directamente al proceso, sin un shell. No requiere
-un ServiceProvider ni Artisan para funcionar dentro de Laravel. Esta versión
-procesa un archivo por invocación; no implementa escaneo recursivo de proyectos.
-Solo se comprobó en Linux; Windows aún no está validado.
+Reemplaza `archivo.php` por un archivo existente. Composer crea el comando en
+`vendor/bin`; usar solo `phpguard` exige que esa carpeta esté en el PATH.
+No requiere Artisan, un ServiceProvider ni un servicio remoto. El análisis se
+realiza localmente y no envía el código a Internet.
 
-Antes de publicar en Packagist deben resolverse las condiciones de distribución
-del modelo, confirmar disponibilidad del nombre
-`elisbanpaco/phpguard`, versionar los archivos nuevos (incluidos los pesos) y crear
-una etiqueta. No se ha publicado el paquete. El corpus, los entornos y los
-artefactos de investigación se excluyen de los archivos de distribución.
-Consulta `models/README.md` y `models/manifest.json` para conocer las limitaciones
-y procedencia del checkpoint incluido.
+El resultado es JSON. Los códigos son `0` = `SIN_INDICIOS`, `1` = `SOSPECHOSO`,
+`2` = error o `NO_ANALIZABLE`. Se rechazan archivos mayores de 200000 bytes,
+sin apertura PHP o con errores de parseo. El puente PHP limita cada ejecución
+a 120 segundos. Se pasan argumentos directamente al proceso, sin un shell.
+Solo se procesa un archivo por invocación. El archivo inspeccionado no se ejecuta
+ni se modifica. `SIN_INDICIOS` no certifica seguridad; las puntuaciones no están
+calibradas. Un archivo con `<?php` en la primera línea y `echo 123;` en la segunda
+produce una falsa alarma conocida; el mismo programa en una sola línea no la
+produce. Esa sensibilidad al formato es una limitación del modelo actual.
+
+El modelo sigue siendo el de la ejecución del 27 de noviembre de 2026 y su
+SHA-256 se verifica antes de cargarlo. Esa ejecución reprodujo exactamente el
+checkpoint anterior; el empaquetado no mejora su precisión.
+
+El archivo completo se distribuirá como un ZIP de GitHub Releases. El campo
+`dist` de `composer.json` apunta al archivo de v0.2.0; todavía debe publicarse.
+Los binarios grandes no se versionan en Git. Una instalación desde código fuente
+(`--prefer-source`) no incluye ese motor. Para construirlo y revisar el ZIP antes
+de publicar, consulta `packaging/README.md`.
+
+Para desarrollar desde el código fuente, con las dependencias Python instaladas:
+
+```bash
+PHPGUARD_PYTHON="$PWD/.venv/bin/python" php bin/phpguard archivo.php
+```
+
+Esta variable es una alternativa para desarrollo cuando falta el motor incluido.
+Si existe un motor empaquetado, tiene prioridad sobre cualquier variable antigua.
+
+La versión v0.1.0 ya publicada mantiene su instalación manual de Python. La nueva
+versión no estará disponible en Packagist hasta subir sus fuentes, etiqueta y ZIP.
+El corpus y los artefactos de investigación se excluyen de la distribución.
+Consulta `models/README.md` y `models/manifest.json` para conocer la procedencia y
+limitaciones del modelo. Sus condiciones de distribución siguen pendientes.
 
 ## Licencia
 
@@ -83,7 +74,7 @@ pesos. El inventario de entrenamiento incluye fuentes MIT, GPL, CC0 y una fuente
 sin licencia declarada; no se concluye que sus condiciones se transfieran
 automáticamente al modelo ni que los pesos estén libres de obligaciones.
 Antes de publicar el paquete con pesos debe revisarse este punto y documentarse
-su licencia y los avisos que correspondan. No se ha publicado el paquete.
+su licencia y los avisos que correspondan. La nueva distribución autónoma aún no se ha publicado.
 
 ## Estado y resultados
 

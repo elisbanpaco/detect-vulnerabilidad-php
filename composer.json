@@ -7,7 +7,11 @@
         "php": ">=8.2"
     },
     "bin": ["bin/phpguard"],
+    "dist": {
+        "type": "zip",
+        "url": "https://github.com/elisbanpaco/detect-vulnerabilidad-php/releases/download/v0.2.0/phpguard-linux-x86_64.zip"
+    },
     "archive": {
-        "exclude": ["/dataset", "/artifacts", "/.venv", "/.agents", "/.codex", "/.aws", "/tests", "/src/test_*.py", "/src/__pycache__", "/src/*.pt", "/vendor", "/dist", "/.env", "/.env.*"]
+        "exclude": ["/dataset", "/artifacts", "/.venv", "/.agents", "/.codex", "/.aws", "/tests", "/src/test_*.py", "/src/__pycache__", "/src/*.pt", "/vendor", "/dist", "/build", "/runtime", "/packaging", "/.env", "/.env.*"]
     }
 }

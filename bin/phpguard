@@ -3,19 +3,30 @@
 declare(strict_types=1);
 
 $root = dirname(__DIR__);
-$python = getenv('PHPGUARD_PYTHON') ?: (is_file($root . '/.venv/bin/python') ? $root . '/.venv/bin/python' : 'python3');
 
 try {
     if (!function_exists('proc_open')) {
-        throw new RuntimeException('PHP debe permitir proc_open para iniciar el motor Python.');
+        throw new RuntimeException('PHP debe permitir proc_open para iniciar el motor local.');
+    }
+    $python = getenv('PHPGUARD_PYTHON');
+    $engine = $root . '/runtime/linux-x86_64/phpguard-engine';
+    if (is_executable($engine)) {
+        $command = [$engine];
+    } elseif ($python !== false && $python !== '' && is_file($root . '/src/scan.py')) {
+        $command = [$python, $root . '/src/scan.py'];
+    } else {
+        if (PHP_OS_FAMILY !== 'Linux' || php_uname('m') !== 'x86_64') {
+            throw new RuntimeException('Esta distribución requiere Linux x86-64 con glibc; no incluye un motor para esta plataforma.');
+        }
+        throw new RuntimeException('Falta el motor empaquetado. Instala la distribución de la versión con Composer --prefer-dist.');
     }
     $process = proc_open(
-        [$python, $root . '/src/scan.py', ...array_slice($argv, 1)],
+        [...$command, ...array_slice($argv, 1)],
         [0 => STDIN, 1 => STDOUT, 2 => STDERR],
         $pipes
     );
     if (!is_resource($process)) {
-        throw new RuntimeException('No se pudo iniciar Python; configura PHPGUARD_PYTHON.');
+        throw new RuntimeException('No se pudo iniciar el motor local.');
     }
     $deadline = microtime(true) + 120;
     do {

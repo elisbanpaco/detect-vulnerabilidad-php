@@ -14,8 +14,10 @@ Detectó 48/90 muestras maliciosas recolectadas y 270/270 inserciones controlada
 Los patrones de inserción se comparten entre particiones. El conjunto de prueba
 ya se utilizó para diagnóstico; no es una evaluación externa ciega.
 
-Una comprobación manual con `<?php echo 123;` produjo un falso positivo con
-puntuación cercana a 0.997. `SIN_INDICIOS` tampoco garantiza ausencia de malware.
+Una comprobación manual con `<?php` en la primera línea y `echo 123;` en la segunda
+produjo un falso positivo con puntuación cercana a 0.997. En una sola línea el
+mismo programa produjo `SIN_INDICIOS`: el modelo es sensible al formato.
+`SIN_INDICIOS` tampoco garantiza ausencia de malware.
 Las puntuaciones no están calibradas. Las líneas devueltas son candidatas para
 revisión; no constituyen prueba de comportamiento malicioso.
 

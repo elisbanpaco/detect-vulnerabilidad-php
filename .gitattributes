@@ -10,5 +10,8 @@
 /src/*.pt export-ignore
 /vendor export-ignore
 /dist export-ignore
+/build export-ignore
+/runtime export-ignore
+/packaging export-ignore
 /.env export-ignore
 /.env.* export-ignore

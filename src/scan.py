@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(sys._MEIPASS) if getattr(sys, "frozen", False) else Path(__file__).resolve().parent.parent
 MODEL = ROOT / "models/joint-v2.pt"
 MANIFEST = ROOT / "models/manifest.json"
 
